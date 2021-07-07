@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ExODataBind.Models;
+using ExODataBind.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Formatter;
 using Microsoft.AspNetCore.OData.Query;
@@ -15,8 +16,8 @@ namespace ExODataBind.Controllers
         private static IList<Order> orders = new List<Order>(
             Enumerable.Range(1, 3).Select(idx => new Order
             {
-                Id = idx,
-                Customer = new Customer { Id = idx % 2 == 0 ? 1 : 2, Name = $"Customer {(idx % 2 == 0 ? 1 : 2)}" },
+                Id = TokenGenerator.GenerateRandomId(),
+                Customer = new Customer { Id = TokenGenerator.GenerateRandomId(), Name = $"Customer {(idx % 2 == 0 ? 1 : 2)}" },
                 Amount = new Random().Next(7, 13)
             }));
 
@@ -34,6 +35,8 @@ namespace ExODataBind.Controllers
 
         public ActionResult Post([FromBody] Order order)
         {
+            order.Id = TokenGenerator.GenerateRandomId();
+
             return Created(new Uri($"{Request.Scheme}://{Request.Host}{Request.Path}/{order.Id}"), order);
         }
 

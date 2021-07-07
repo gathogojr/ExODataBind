@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ExODataBind.Models;
+using ExODataBind.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Formatter;
 using Microsoft.AspNetCore.OData.Query;
@@ -13,7 +14,7 @@ namespace ExODataBind.Controllers
     public class CustomersController : ODataController
     {
         private static IList<Customer> customers = new List<Customer>(
-            Enumerable.Range(1, 2).Select(idx => new Customer { Id = idx, Name = $"Customer {idx}" }));
+            Enumerable.Range(1, 2).Select(idx => new Customer { Id = TokenGenerator.GenerateRandomId(), Name = $"Customer {idx}" }));
 
         [EnableQuery]
         public IQueryable<Customer> Get()
@@ -29,6 +30,8 @@ namespace ExODataBind.Controllers
 
         public ActionResult Post([FromBody] Customer customer)
         {
+            customer.Id = TokenGenerator.GenerateRandomId();
+
             return Created(new Uri($"{Request.Scheme}://{Request.Host}{Request.Path}/{customer.Id}"), customer);
         }
 

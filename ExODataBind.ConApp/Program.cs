@@ -10,14 +10,14 @@ namespace ExODataBind.ConApp
         {
             var order = new Order
             {
-                Id = 1,
+                Id = "",
                 Amount = 13M,
             };
 
             var customer = new Customer
             {
-                Id = 1,
-                Name = "Customer 1"
+                Id = "",
+                Name = "Customer ?"
             };
 
             var serviceUri = new Uri("http://localhost:33435/odata");

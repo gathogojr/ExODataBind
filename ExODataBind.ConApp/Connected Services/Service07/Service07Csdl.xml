@@ -5,14 +5,14 @@
         <Key>
           <PropertyRef Name="Id" />
         </Key>
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
       </EntityType>
       <EntityType Name="Order">
         <Key>
           <PropertyRef Name="Id" />
         </Key>
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
         <Property Name="Amount" Type="Edm.Decimal" Nullable="false" />
         <NavigationProperty Name="Customer" Type="ExODataBind.Models.Customer" />
       </EntityType>

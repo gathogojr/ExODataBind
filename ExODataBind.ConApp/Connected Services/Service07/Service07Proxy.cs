@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 05-Jul-21 10:39:07 AM
+// Generation date: 07-Jul-21 11:24:06 AM
 namespace ExODataBind.Models
 {
         /// <summary>
@@ -51,7 +51,7 @@ namespace ExODataBind.Models
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public static Customer CreateCustomer(int ID)
+        public static Customer CreateCustomer(string ID)
         {
             Customer customer = new Customer();
             customer.Id = ID;
@@ -62,7 +62,7 @@ namespace ExODataBind.Models
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
-        public virtual int Id
+        public virtual string Id
         {
             get
             {
@@ -77,8 +77,8 @@ namespace ExODataBind.Models
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private int _Id;
-        partial void OnIdChanging(int value);
+        private string _Id;
+        partial void OnIdChanging(string value);
         partial void OnIdChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
@@ -184,7 +184,7 @@ namespace ExODataBind.Models
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="amount">Initial value of Amount.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public static Order CreateOrder(int ID, decimal amount)
+        public static Order CreateOrder(string ID, decimal amount)
         {
             Order order = new Order();
             order.Id = ID;
@@ -196,7 +196,7 @@ namespace ExODataBind.Models
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
-        public virtual int Id
+        public virtual string Id
         {
             get
             {
@@ -211,8 +211,8 @@ namespace ExODataBind.Models
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private int _Id;
-        partial void OnIdChanging(int value);
+        private string _Id;
+        partial void OnIdChanging(string value);
         partial void OnIdChanged();
         /// <summary>
         /// There are no comments for Property Amount in the schema.
@@ -298,7 +298,7 @@ namespace ExODataBind.Models
         /// <param name="_source">source entity set</param>
         /// <param name="id">The value of id</param>
         public static global::ExODataBind.Models.CustomerSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ExODataBind.Models.Customer> _source,
-            int id)
+            string id)
         {
             global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
@@ -321,7 +321,7 @@ namespace ExODataBind.Models
         /// <param name="_source">source entity set</param>
         /// <param name="id">The value of id</param>
         public static global::ExODataBind.Models.OrderSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ExODataBind.Models.Order> _source,
-            int id)
+            string id)
         {
             global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
